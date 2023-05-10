@@ -23,7 +23,7 @@ public class AdminPanelScrpit : MonoBehaviour
       //  adminpanel.SetActive(false);
         sellerpanel.SetActive(true);
     }
-    public void press_cancel_button_in_sellerpanel()
+    public void press_cancel_button_in_sellerpanel() //음료 판매 패널에서 취소 버튼 눌렀을때
     {
        // adminpanel.SetActive(true);
         sellerpanel.SetActive(false);
@@ -33,18 +33,18 @@ public class AdminPanelScrpit : MonoBehaviour
      //   adminpanel.SetActive(false);
         returnmoneypanel.SetActive(true);
     }
-    public void press_cancel_button_in_returnmoneypanel()
+    public void press_cancel_button_in_returnmoneypanel() //수금하는 패널에서 나간다.
     {
       //  adminpanel.SetActive(true);
         returnmoneypanel.SetActive(false);
     }
-    public void press_remain_drink_panel()
+    public void press_remain_drink_panel() //재고확인 패널에 들어간다.
     {
       //  adminpanel.SetActive(false);
         remaindrinkpanel.SetActive(true);
 
     }
-    public void press_cancel_button_in_remaindrinkpanel()
+    public void press_cancel_button_in_remaindrinkpanel() //재고확인 패널에서 나간다.
     {
 //adminpanel.SetActive(true);
         remaindrinkpanel.SetActive(false);

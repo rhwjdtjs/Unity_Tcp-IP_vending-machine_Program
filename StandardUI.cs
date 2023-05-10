@@ -8,49 +8,50 @@ public class StandardUI : MonoBehaviour
     [SerializeField] private GameObject main_panel;
     [SerializeField] private GameObject login_panel;
     [SerializeField] private GameObject adminster_panel;
-    [SerializeField] private GameObject shop_drink_panel;
+    [SerializeField] private GameObject shop_drink_panel; //패널들
     [SerializeField] private Animator main_anim;
     [SerializeField] private Animator login_anim;
     [SerializeField] private Animator admin_anim;
-    [SerializeField] private Animator shop_drink_anim;
+    [SerializeField] private Animator shop_drink_anim; //애니메이션들
     [SerializeField] private Button admin_button;
     [SerializeField] private Button login_cancel_button;
     [SerializeField] private Button login_to_admin_button;
     [SerializeField] private Button admin_cancel_button;
     [SerializeField] private Button quit_program_button;
     [SerializeField] private Button shop_drink_Cancel_button;
-    [SerializeField] private Button start_shop_button;
-    [SerializeField] private adminpassword theadminpassward;
-    [SerializeField] private InputField thepasswordinput;
-    [SerializeField] private Text incorrectmessagetext;
-    public void mainbutton()
+    [SerializeField] private Button start_shop_button; //필요한 버튼들
+    [SerializeField] private adminpassword theadminpassward; //관리자 비밀번호
+    [SerializeField] private InputField thepasswordinput; //비밀번호 입력 필드
+    [SerializeField] private Text incorrectmessagetext; //비번이 틀릴때 나오는 텍스트
+    public void mainbutton() //메인화면 버튼 눌렀을때
     {
         StartCoroutine(mainco());
     }
-    public void toadminloginbutton()
+    public void toadminloginbutton() //로그인 버튼을 누르면 관리자 화면으로 간다.
     {
         StartCoroutine(toadminloginco());
     }
-    public void tomainlogincancel()
+    public void tomainlogincancel() //로그인 화면에서 취소
     {
         StartCoroutine(tomainloginco());
     }
-    public void admincancelbutton()
+    public void admincancelbutton() //관리자 메뉴에서 취소
     {
         StartCoroutine(admincancelco());
     }
-    public void shopdrinkcancelbutton()
+    public void shopdrinkcancelbutton() //음료 구매 창 취소버튼
     {
         StartCoroutine(shopdrinktomainco());
     }
-    public void maintoshopbutton()
+    public void maintoshopbutton()//음료 구매 하는 패널로 이동하는 버튼
     {
         StartCoroutine(maintoshopco());
     }
-    public void quitbutton()
+    public void quitbutton() //종료 버튼
     {
         Application.Quit();
     }
+    //각 버튼을 눌렀을때 실행되는 함수
     IEnumerator mainco()
     {
         main_anim.SetTrigger("close");

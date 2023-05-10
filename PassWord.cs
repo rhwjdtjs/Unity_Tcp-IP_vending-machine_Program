@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class PassWord
 {
-    public static string password;
+    public static string password; //관리자 비밀번호
 }

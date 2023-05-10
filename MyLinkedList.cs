@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine; 
+//연결리스트 구현 스크립트
 [System.Serializable]
 public class MyLinkedListNode<T>
 
@@ -50,4 +51,5 @@ public class MyLinkedList<T> : MonoBehaviour
 
         count--;
     }
+    //연결리스트 구현 스크립트
 }
