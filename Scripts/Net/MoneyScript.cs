@@ -12,5 +12,11 @@ public class MoneyScript
     public static int money100count = 0; //100원짜리 동전 갯수
     public static int money500count = 0; //500원짜리 동전 갯수
     public static int money1000count = 0; //1000원짜리 지폐 갯수
-   
+    public static int currentAdminMoney = 0; //수금할때 돈
+    public static int collectmoney10count; //수금할때 동전 갯수
+    public static int collectmoney50count; //수금할때 동전 갯수
+    public static int collectmoney100count; //수금할때 동전 갯수
+    public static int collectmoney500count; //수금할때 동전 갯수
+    public static int collectmoney1000count; //수금할때 동전 갯수
+
 }

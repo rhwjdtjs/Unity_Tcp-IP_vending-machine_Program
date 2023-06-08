@@ -12,6 +12,8 @@ public class adminpassword : MonoBehaviour
     [SerializeField] private Button thestartbutton; //다음 씬으로 넘어가기위한 버튼
     [SerializeField] private Text correctpassword; //올바른 비번일때 나오는 텍스트
     [SerializeField] private Text incorrectpassword; //틀린 비번일때 나오는 텍스트
+    public static bool ispassword = false;
+    public static bool canlogin = false;
     void Start()
     {
         thestartbutton.gameObject.SetActive(false); //버튼 비활성화
@@ -24,20 +26,26 @@ public class adminpassword : MonoBehaviour
     }
     public void afterpasswordOkButton()
     {
+        
+            if (PassWord.password.Length >= 8 && PassWord.password.Any(c => !Char.IsLetterOrDigit(c)) && PassWord.password.Any(c => Char.IsDigit(c))) //특수문자가 하나이 상 포함되어 있고
+                                                                                                                                                      //숫자가 하나 이상 있으며 8자 이상일때
+            {
+                Debug.Log("비밀번호가 규칙에 맞습니다.");
+                Debug.Log(PassWord.password);
+                ispassword = true;
+                StartCoroutine(correctpasswordco()); //함수 실행
 
-        if (PassWord.password.Length >= 8 && PassWord.password.Any(c => !Char.IsLetterOrDigit(c)) && PassWord.password.Any(c => Char.IsDigit(c))) //특수문자가 하나이 상 포함되어 있고
-            //숫자가 하나 이상 있으며 8자 이상일때
-        {
-            Debug.Log("비밀번호가 규칙에 맞습니다.");
-            Debug.Log(PassWord.password);
-            StartCoroutine(correctpasswordco()); //함수 실행
-        }
-        else
-        {
-            Debug.Log("비밀번호는 8자리 이상, 특수문자 및 숫자가 포함되어야 합니다.");
-            Debug.Log(PassWord.password);
-            StartCoroutine(incorrectpasswordco()); //함수 실행
-        }
+            }
+            else
+            {
+                Debug.Log("비밀번호는 8자리 이상, 특수문자 및 숫자가 포함되어야 합니다.");
+                Debug.Log(PassWord.password);
+                ispassword = false;
+                StartCoroutine(incorrectpasswordco()); //함수 실행
+
+            }
+        
+        
 
 
     }

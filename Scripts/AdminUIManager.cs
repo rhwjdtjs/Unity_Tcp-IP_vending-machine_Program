@@ -11,6 +11,13 @@ public class AdminUIManager : MonoBehaviour
     public GameObject waterdrinksalepanel;
     public GameObject highcoffeesalepanel;
     public GameObject tansansalepanel;
+    private coffeedailyormonthsaleui thecoffee;
+    private dailyormonthsaleUI total;
+    private highcoffeedailyormonthsaleui thehigh;
+    private tansandailyormonthsaleui thetansan;
+    private WaterDrinkdailytotalsale thewater;
+    private waterdrinkdailyormonthsaleui thewaterdrink;
+    
     public void Open_openselectpanel()
     {
         openselectpanel.SetActive(true);
@@ -22,26 +29,32 @@ public class AdminUIManager : MonoBehaviour
     public void Open_totalsalepanel()
     {
         totalsalepanel.SetActive(true);
+        total.LoadDataAndDrawGraph();
     }
     public void Open_watersalepanel()
     {
         watersalepanel.SetActive(true);
+        thewater.LoadDataAndDrawGraph();
     }
     public void Open_totalsalepanelcoffeesalepanel()
     {
         coffeesalepanel.SetActive(true);
+        thecoffee.LoadDataAndDrawGraph();
     }
     public void Open_waterdrinksalepanel()
     {
         waterdrinksalepanel.SetActive(true);
+        thewaterdrink.LoadDataAndDrawGraph();
     }
     public void Open_highcoffeesalepanel()
     {
         highcoffeesalepanel.SetActive(true);
+        thehigh.LoadDataAndDrawGraph();
     }
     public void Open_tansansalepanel()
     {
         tansansalepanel.SetActive(true);
+        thetansan.LoadDataAndDrawGraph();
     }
     public void Cancel_totalsalepanel()
     {
@@ -69,7 +82,12 @@ public class AdminUIManager : MonoBehaviour
     }
     void Start()
     {
-        
+        total = FindObjectOfType<dailyormonthsaleUI>();
+        thewater = FindObjectOfType<WaterDrinkdailytotalsale>();
+        thewaterdrink = FindObjectOfType<waterdrinkdailyormonthsaleui>();
+        thehigh = FindObjectOfType<highcoffeedailyormonthsaleui>();
+        thetansan = FindObjectOfType<tansandailyormonthsaleui>();
+        thecoffee = FindObjectOfType<coffeedailyormonthsaleui>();
     }
 
     void Update()

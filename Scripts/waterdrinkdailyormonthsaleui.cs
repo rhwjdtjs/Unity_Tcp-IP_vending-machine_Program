@@ -12,17 +12,17 @@ public class waterdrinkdailyormonthsaleui : MonoBehaviour
     [SerializeField] Image[] month_gaege; //월별 판매 그래프
     void Start()
     {
-        LoadDataAndDrawGraph();
+      //  LoadDataAndDrawGraph();
     }
 
     void Update()
     {
         // 데이터 로드 및 그래프 그리기
-        LoadDataAndDrawGraph();
+      //  LoadDataAndDrawGraph();
     }
 
     // 데이터 로드 및 그래프 그리기 함수
-    void LoadDataAndDrawGraph()
+   public void LoadDataAndDrawGraph()
     {
         // 데이터 로드
         SellerScript.LoadDataWaterdrink();

@@ -2,30 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class WaterDrinkdailytotalsale : MonoBehaviour //dailyormonthsaleui와 동일 해당은 물을 위한 스크립트.
+public class highcoffeedailyormonthsaleui : MonoBehaviour
 {
-    [SerializeField] Text[] daily_total_sale;
-    [SerializeField] Text[] daily_name;
-    [SerializeField] Text[] month_total_sale;
-    [SerializeField] Text[] month_name;
-    [SerializeField] Image[] daily_gaege;
-    [SerializeField] Image[] month_gaege;
+    [SerializeField] Text[] daily_total_sale; //일별 팔린 금액 텍스트
+    [SerializeField] Text[] daily_name; //일별 이름 텍스트
+    [SerializeField] Text[] month_total_sale; //월별 판매 금액 텍스트
+    [SerializeField] Text[] month_name; //월별 이름 텍스트
+    [SerializeField] Image[] daily_gaege; //일별 판매 그래프
+    [SerializeField] Image[] month_gaege; //월별 판매 그래프
     void Start()
     {
-        LoadDataAndDrawGraph();
+        //LoadDataAndDrawGraph();
     }
 
     void Update()
     {
         // 데이터 로드 및 그래프 그리기
-        LoadDataAndDrawGraph();
+      //  LoadDataAndDrawGraph();
     }
 
     // 데이터 로드 및 그래프 그리기 함수
-    void LoadDataAndDrawGraph()
+    public void LoadDataAndDrawGraph()
     {
         // 데이터 로드
-        SellerScript.LoadDataWater();
+        SellerScript.LoadDataHighcoffee();
 
         // 일별 매출 그래프 그리기
         for (int i = 0; i < daily_total_sale.Length; i++)

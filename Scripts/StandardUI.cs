@@ -66,23 +66,27 @@ public class StandardUI : MonoBehaviour
     }
     IEnumerator toadminloginco() //로그인 버튼을 누르면 관리자 화면으로 감.
     {
-        if (thepasswordinput.text.ToString() == PassWord.password)
-        {
-            incorrectmessagetext.gameObject.SetActive(false);
-            login_anim.SetTrigger("close");
-            login_cancel_button.gameObject.SetActive(false);
-            admin_cancel_button.gameObject.SetActive(true);
-            login_to_admin_button.gameObject.SetActive(false);
-            yield return new WaitForSeconds(1f);
-            login_panel.SetActive(false);
-            adminster_panel.SetActive(true);
-        }
-        else
-        {
-            incorrectmessagetext.gameObject.SetActive(true);
-            yield return new WaitForSeconds(1.5f);
-            incorrectmessagetext.gameObject.SetActive(false);
-        }
+       
+            if (thepasswordinput.text.ToString() == PassWord.password)
+            {
+                incorrectmessagetext.gameObject.SetActive(false);
+                login_anim.SetTrigger("close");
+                login_cancel_button.gameObject.SetActive(false);
+                admin_cancel_button.gameObject.SetActive(true);
+                login_to_admin_button.gameObject.SetActive(false);
+                yield return new WaitForSeconds(1f);
+                login_panel.SetActive(false);
+                adminster_panel.SetActive(true);
+            }
+            else
+            {
+                incorrectmessagetext.gameObject.SetActive(true);
+                yield return new WaitForSeconds(1.5f);
+                incorrectmessagetext.gameObject.SetActive(false);
+            }
+        
+    
+
     }
     IEnumerator tomainloginco()
     {
